@@ -1,0 +1,11 @@
+= SLT Spring Sessions
+
+
+This workspace contains the samples to follow the Spring Sessions on SLT.
+
+Some samples/tests have documentation, otherwise read the code.
+
+== How to execute Samples
+
+- With the IDE of your choice (IntelliJ or Eclipse)
+- From prompt
