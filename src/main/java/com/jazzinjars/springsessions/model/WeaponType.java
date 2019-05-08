@@ -1,11 +1,11 @@
-package com.jazzinjars.springsessions;
+package com.jazzinjars.springsessions.model;
 
 public enum WeaponType {
 
-   SHORT_SWORD("short sword"),
-   SPEAR("spear"),
-   AXE("axe"),
-   ELBOW("elbow"),
+   SWORD("Sword"),
+   SPEAR("Spear"),
+   AXE("Axe"),
+   ELBOW("Elbow"),
    UNDEFINED("");
 
    private String title;
