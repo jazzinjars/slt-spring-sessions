@@ -1,8 +1,11 @@
-package com.jazzinjars.springsessions.session1;
+package com.jazzinjars.springsessions.session;
 
 import com.jazzinjars.springsessions.model.Weapon;
 import com.jazzinjars.springsessions.model.WeaponType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 // Retrieve material for your Weapon
@@ -10,9 +13,11 @@ import org.springframework.stereotype.Component;
     // Manufacture Weapon
 
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Forge {
 
     @Autowired
+    @Qualifier("orc")
     private Blacksmith blacksmith;
 
     public Forge(Blacksmith blacksmith) {
@@ -28,11 +33,4 @@ public class Forge {
         return weapon;
     }
 
-//    public Weapon createWeapon(WeaponType weaponType) {
-//
-//        ElfBlacksmith elfBlacksmith = new ElfBlacksmith();
-//        Weapon weapon = elfBlacksmith.manufactureWeapon(weaponType);
-//
-//        return weapon;
-//    }
 }

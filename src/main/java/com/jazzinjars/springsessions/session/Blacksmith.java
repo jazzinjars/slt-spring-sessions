@@ -1,4 +1,4 @@
-package com.jazzinjars.springsessions.session1;
+package com.jazzinjars.springsessions.session;
 
 import com.jazzinjars.springsessions.model.Weapon;
 import com.jazzinjars.springsessions.model.WeaponType;

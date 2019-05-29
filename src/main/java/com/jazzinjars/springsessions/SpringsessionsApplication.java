@@ -2,7 +2,7 @@ package com.jazzinjars.springsessions;
 
 import com.jazzinjars.springsessions.model.Weapon;
 import com.jazzinjars.springsessions.model.WeaponType;
-import com.jazzinjars.springsessions.session1.Forge;
+import com.jazzinjars.springsessions.session.Forge;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -18,6 +18,11 @@ public class SpringsessionsApplication {
 
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(SpringsessionsApplication.class, args);
 		Forge forge = applicationContext.getBean(Forge.class);
+
+		Forge forge1 = applicationContext.getBean(Forge.class);
+
+		System.out.println(forge);
+		System.out.println(forge1);
 
 		//Forge forge = new Forge(new ElfBlacksmith());
 		Weapon weapon = forge.createWeapon(WeaponType.SWORD);
