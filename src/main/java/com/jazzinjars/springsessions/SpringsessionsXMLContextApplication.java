@@ -7,8 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan
 public class SpringsessionsXMLContextApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringsessionsXMLContextApplication.class);
@@ -22,6 +20,7 @@ public class SpringsessionsXMLContextApplication {
 		try (ClassPathXmlApplicationContext applicationContext =
 			new ClassPathXmlApplicationContext("applicationContext.xml")) {
 
+			LOGGER.info("Beans Loaded -> {}", (Object)applicationContext.getBeanDefinitionNames());
 			XmlCharacterDAO xmlCharacterDAO = applicationContext.getBean(XmlCharacterDAO.class);
 			LOGGER.info("{} - {}", xmlCharacterDAO, xmlCharacterDAO.getXmlJdbcConnection());
 		}
