@@ -2,21 +2,22 @@ package com.jazzinjars.springsessions.session;
 
 import com.jazzinjars.springsessions.model.Weapon;
 import com.jazzinjars.springsessions.model.WeaponType;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 // Retrieve material for your Weapon
     // Select Blacksmith {Orc, Elf, Dwarf}
     // Manufacture Weapon
 
-@Component
+@Service
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Forge {
     private Logger logger = LoggerFactory.getLogger(Forge.class);
