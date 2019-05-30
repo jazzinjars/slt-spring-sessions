@@ -2,17 +2,21 @@ package com.jazzinjars.springsessions.xml;
 
 public class XmlCharacterDAO {
 
-   XmlJdbcConnection jdbcConnection;
+   XmlJdbcConnection xmlJdbcConnection;
+
+   public XmlCharacterDAO() {
+
+   }
 
    public XmlCharacterDAO(XmlJdbcConnection jdbcConnection) {
-      this.jdbcConnection = jdbcConnection;
+      this.xmlJdbcConnection = xmlJdbcConnection;
    }
 
-   public XmlJdbcConnection getJdbcConnection() {
-      return jdbcConnection;
+   public XmlJdbcConnection getXmlJdbcConnection() {
+      return xmlJdbcConnection;
    }
 
-   public void setJdbcConnection(XmlJdbcConnection jdbcConnection) {
-      this.jdbcConnection = jdbcConnection;
+   public void setXmlJdbcConnection(XmlJdbcConnection xmlJdbcConnection) {
+      this.xmlJdbcConnection = xmlJdbcConnection;
    }
 }
