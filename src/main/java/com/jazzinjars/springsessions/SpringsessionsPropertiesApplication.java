@@ -22,7 +22,7 @@ public class SpringsessionsPropertiesApplication {
 			new AnnotationConfigApplicationContext(SpringsessionsPropertiesApplication.class);) {
 			ExternalService externalService = applicationContext.getBean(ExternalService.class);
 
-			System.out.println(externalService);
+			System.out.println(externalService.returnServiceURL());
 		}
 
 	}
