@@ -2,6 +2,10 @@ package com.jazzinjars.springsessions.session;
 
 import com.jazzinjars.springsessions.model.Weapon;
 import com.jazzinjars.springsessions.model.WeaponType;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Forge {
+    private Logger logger = LoggerFactory.getLogger(Forge.class);
 
     @Autowired
     @Qualifier("orc")
@@ -31,6 +36,16 @@ public class Forge {
         System.out.println(blacksmith);
 
         return weapon;
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        logger.info("POST-CONSTRUCT");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("PRE-DESTROY");
     }
 
 }
